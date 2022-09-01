@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import palette from '../../lib/styles/palette';
 import Button from './Button';
 
 const Fullscreen = styled.div`
@@ -16,10 +17,11 @@ const Fullscreen = styled.div`
 
 const AskModalBlock = styled.div`
   width: 320px;
-  background: white;
+  background: ${palette.gray[1]};
   padding: 1.5rem;
-  border-radius: 4px;
+  border-radius: 20px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.125);
+  color: ${palette.gray[9]};
   h2 {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -34,7 +36,7 @@ const AskModalBlock = styled.div`
 `;
 
 const StyledButton = styled(Button)`
-  height: 2rem;
+  padding: 0.5rem 1.5rem;
   & + & {
     margin-left: 0.75rem;
   }
@@ -57,7 +59,7 @@ const AskModal = ({
         <p>{description}</p>
         <div className='buttons'>
           <StyledButton onClick={onCancel}>{calcelText}</StyledButton>
-          <StyledButton cyan onClick={onConfirm}>
+          <StyledButton red onClick={onConfirm}>
             {confirmText}
           </StyledButton>
         </div>

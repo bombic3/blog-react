@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Button from './Button';
 import Responsive from './Responsive';
 import { Link } from 'react-router-dom';
+import palette from '../../lib/styles/palette';
 
 /*
 1. Button 컴포넌트에서 withRouter 사용
@@ -18,22 +19,23 @@ import { Link } from 'react-router-dom';
 const HeaderBlock = styled.div`
   position: fixed;
   width: 100%;
-  background: white;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  background: ${palette.gray[1]};
+  color: ${palette.gray[9]};
+  box-shadow: 0px 4px 6px rgba(0,0,0, 0.5);
 `;
 
 /*
   Responsive 컴포넌트의 속성에 스타일을 추가해서 새로운 컴포넌트 생성
 */
 const Wrapper = styled(Responsive)`
-  height: 4rem;
+  height: 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between; /* 자식 엘리먼트 사이의 여백을 최대로 설정 */
   .logo {
     font-size: 1.125rem;
     font-weight: 800;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
   }
   .right {
     display: flex;
@@ -45,12 +47,11 @@ const Wrapper = styled(Responsive)`
   헤더가 fixed 로 되어 있기 때문에 콘텐츠가 헤더와 안 겹치고 4rem 아래인 헤더 바로 밑에 나타나도록 해주는 컴포넌트
 */
 const Spacer = styled.div`
-  height: 4rem;
+  height: 5rem;
 `;
 
 const UserInfo = styled.div`
-  font-weight: 800;
-  margin-right: 1rem;
+  margin-right: 2rem;
 `;
 
 const Header = ({ user, onLogout }) => {
@@ -59,16 +60,16 @@ const Header = ({ user, onLogout }) => {
       <HeaderBlock>
         <Wrapper>
           <Link to='/' className='logo'>
-            REACTERS
+            &#8962; HOME
           </Link>
           {user ? (
             <div className='right'>
-              <UserInfo>{user.username}</UserInfo>
-              <Button onClick={onLogout}>로그아웃</Button>
+              <UserInfo><b>{user.username}</b> 님 환영합니다 :&#41;</UserInfo>
+              <Button cyan onClick={onLogout}>로그아웃</Button>
             </div>
           ) : (
               <div className='right'>
-                <Button to='/login'>로그인</Button>
+                <Button cyan to='/login'>로그인</Button>
               </div>
           )}
         </Wrapper>

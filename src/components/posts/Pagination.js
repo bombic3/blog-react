@@ -1,15 +1,21 @@
 import styled from 'styled-components';
 import qs from 'qs';
 import Button from '../common/Button';
+import palette from '../../lib/styles/palette';
 
 const PaginationBlock = styled.div`
+  padding: 2rem;
   width: 320px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   margin-bottom: 3rem;
 `;
-const PageNumber = styled.div``;
+const PageNumber = styled.div`
+  /* background: blue; */
+  line-height: 2;
+  color: ${palette.gray[1]};
+`;
 
 // - 사용자가 이 컴포넌트에 있는 버튼을 클릭하면 props로 받아 온 값을 사용하여
 //  이동해야 할 다음 경로를 설정해 줌
@@ -31,16 +37,16 @@ const buildLink = ({ username, tag, page }) => {
 const Pagination = ({ page, lastPage, username, tag }) => {
   return (
     <PaginationBlock>
-      <Button
+      <Button cyan
         disabled={page === 1}
         to={
           page === 1 ? undefined : buildLink({ username, tag, page: page - 1 })
         }
       >
-        이전
+        &#60; 이전
       </Button>
       <PageNumber>{page}</PageNumber>
-      <Button
+      <Button cyan
         disabled={page === lastPage}
         to={
           page === lastPage
@@ -48,7 +54,7 @@ const Pagination = ({ page, lastPage, username, tag }) => {
             : buildLink({ username, tag, page: page + 1 })
         }
       >
-        다음
+        다음 &#62;
       </Button>
     </PaginationBlock>
   );

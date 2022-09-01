@@ -1,7 +1,6 @@
 // source: https://yeun.github.io/open-color/
-
-const palette = {
-  gray: [
+/*
+gray: [
     '#f8f9fa',
     '#f1f3f5',
     '#e9ecef',
@@ -13,7 +12,7 @@ const palette = {
     '#343a40',
     '#212529',
   ],
-  cyan: [
+    cyan: [
     '#e3fafc',
     '#c5f6fa',
     '#99e9f2',
@@ -24,6 +23,44 @@ const palette = {
     '#1098ad',
     '#0c8599',
     '#0b7285',
+  ],
+*/
+const palette = {
+  gray: [
+    '#333',
+    '#343a40',
+    '#495057',
+    '#868e96',
+    '#adb5bd',
+    '#ced4da',
+    '#dee2e6',
+    '#e9ecef',
+    '#f1f3f5',
+    '#fbfbfb',
+  ],
+  cyan: [
+    '#1864ab',
+    '#1971c2',
+    '#1c7ed6',
+    '#228be6',
+    '#339af0',
+    '#4dabf7',
+    '#74c0fc',
+    '#a5d8ff',
+    '#e7f5ff',
+    '#e7f5ff',
+  ],
+  red: [
+    '#c92a2a',
+    '#e03131',
+    '#f03e3e',
+    '#fa5252',
+    '#ff6b6b',
+    '#ff8787',
+    '#ffa8a8',
+    '#ffc9c9',
+    '#ffe3e3',
+    '#fff5f5',
   ],
 };
 

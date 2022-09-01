@@ -8,6 +8,7 @@ import Button from '../common/Button';
 */
 
 const AuthFormBlock = styled.div`
+  background: ${palette.gray[1]};;
   h3 {
     margin: 0;
     color: ${palette.gray[8]};
@@ -25,8 +26,10 @@ const StyledInput = styled.input`
   padding-bottom: 0.5rem;
   outline: none;
   width: 100%;
+  background: ${palette.gray[1]};
+  color: ${palette.gray[9]};
   &:focus {
-    color: $oc-teal-7;
+    color: ${palette.gray[10]};
     border-bottom: 1px solid ${palette.gray[7]};
   }
   & + & {
@@ -43,8 +46,10 @@ const Footer = styled.div`
   a {
     color: ${palette.gray[6]};
     text-decoration: underline;
+    transition: all 0.5s;
     &:hover {
       color: ${palette.gray[9]};
+      font-weight: bold;
     }
   }
 `;
@@ -68,9 +73,10 @@ const textMap = {
   에러를 보여 줍니다
 */
 const ErrorMessage = styled.div`
-  color: red;
+  color: ${palette.red[3]};;
   text-align: center;
   font-size: 0.875rem;
+  font-weight: bold;
   margin-top: 1rem;
 `;
 

@@ -7,24 +7,28 @@ import SubInfo from '../common/SubInfo';
 import Tags from '../common/Tags';
 
 const PostListBlock = styled(Responsive)`
-  margin-top: 3rem;
+  padding-top: 2rem;
 `;
 
-const WritePostButtonWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 3rem;
+const NewWriteBtn = styled(Button)`
+  position: fixed;
+  top: 6rem;
+  right: 2rem;
+  &:hover {
+    font-size: large;
+    background: ${palette.cyan[1]};
+  }
 `;
 
 const PostItemBlock = styled.div`
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  color: ${palette.gray[10]};
+  padding: 3rem 0;
   /* 맨 위 포스트는 padding-top 없음 */
   &:first-child {
     padding-top: 0;
   }
   & + & {
-    border-top: 1px solid ${palette.gray[2]};
+    border-top: 1px solid ${palette.gray[4]};
   }
 
   h2 {
@@ -32,7 +36,7 @@ const PostItemBlock = styled.div`
     margin-bottom: 0;
     margin-top: 0;
     &:hover {
-      color: ${palette.gray[6]};
+      color: ${palette.gray[3]};
     }
   }
   p {
@@ -65,13 +69,11 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
 
   return (
     <PostListBlock>
-      <WritePostButtonWrapper>
-        {showWriteButton && (
-          <Button cyan to='/write'>
-            새 글 작성하기
-          </Button>
-        )}
-      </WritePostButtonWrapper>
+      {showWriteButton && (
+        <NewWriteBtn cyan to='/write'>
+          NEW
+        </NewWriteBtn>
+      )}
       {/* 로딩 중이 아니고 포스트 배열이 존재할 때만 보여줌 */}
       {!loading && posts && (
         <div>

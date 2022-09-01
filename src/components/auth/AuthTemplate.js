@@ -13,7 +13,7 @@ const AuthTemplateBlock = styled.div`
   top: 0;
   bottom: 0;
   right: 0;
-  background: ${palette.gray[2]};
+  background: rgba(0, 0, 0, 0.25);
   /* flex로 내부 내용 중앙 정렬 */
   display: flex;
   flex-direction: column;
@@ -33,8 +33,9 @@ const WhiteBox = styled.div`
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.025);
   padding: 2rem;
   width: 360px;
-  background: white;
-  border-radius: 2px;
+  background: ${palette.gray[1]};
+  border-radius: 40px;
+  color: ${palette.gray[9]};
 `;
 
 const AuthTemplate = ({children}) => {

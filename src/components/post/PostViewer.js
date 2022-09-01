@@ -4,13 +4,17 @@ import Responsive from '../common/Responsive';
 import SubInfo from '../common/SubInfo';
 import Tags from '../common/Tags';
 import { Helmet } from 'react-helmet-async';
+import Button from '../common/Button';
+import { Link } from 'react-router-dom';
 
 const PostViewerBlock = styled(Responsive)`
-  margin-top: 4rem;
+  padding: 3rem 2rem;
+
 `;
 const PostHead = styled.div`
-  border-bottom: 1px solid ${palette.gray[2]};
-  padding-bottom: 3rem;
+  color: ${palette.gray[0]};
+  border-bottom: 4px solid ${palette.gray[3]};
+  padding-bottom: 2rem;
   margin-bottom: 3rem;
   h1 {
     font-size: 3rem;
@@ -19,38 +23,15 @@ const PostHead = styled.div`
   }
 `;
 
-/*
-const SubInfo = styled.div`
-  margin-top: 1rem;
-  color: ${palette.gray[6]};
-
-  
-  span + span:before {
-    color: ${palette.gray[5]};
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-    content: '\\B7';
-  }
-`;
-
-const Tags = styled.div`
-  margin-top: 0.5rem;
-  .tag {
-    display: inline-block;
-    color: ${palette.cyan[7]};
-    text-decoration: none;
-    margin-right: 0.5rem;
-    &:hover {
-      color: ${palette.cyan[6]};
-    }
-  }
-`;
-*/
-
 const PostContent = styled.div`
   font-size: 1.3125rem;
-  color: ${palette.gray[8]};
+  color: ${palette.gray[0]};
+  margin-bottom: 3rem;
 `;
+
+const ListViewerBtn = styled(Button)`
+  font-size: 0.875;
+`
 
 /*
 - PostActionButtons 컴포넌트를 PostViewer 의 PostHead 하단에 보여줘야함
@@ -97,10 +78,13 @@ const PostViewer = ({ post, error, loading, actionButtons }) => {
         />
         <Tags tags={tags} />
       </PostHead>
-      {actionButtons}
       <PostContent
         dangerouslySetInnerHTML={{ __html: body }}
       />
+      <ListViewerBtn>
+        <Link to='/'>목록으로</Link>
+      </ListViewerBtn>
+      {actionButtons}
     </PostViewerBlock>
   );
 };

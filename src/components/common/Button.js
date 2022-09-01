@@ -20,17 +20,19 @@ import palette from '../../lib/styles/palette';
 //     - styled-components로 만든 컴포넌트를 바로 내보내면 자동 import가 제대로 작동하지 않음
 const buttonStyle = css`
   border: none;
-  border-radius: 4px;
+  border-radius: 20px;
   font-size: 1rem;
   font-weight: bold;
-  padding: 0.25rem 1rem;
-  color: #fff;
+  padding: 0.6rem 1.5rem;
+  background: ${palette.gray[2]};
+  color: ${palette.gray[9]};;
   outline: none;
   cursor: pointer;
+  transition: all 0.5s;
 
-  background: ${palette.gray[8]};
   &:hover {
-    background: ${palette.gray[6]};
+    background: ${palette.gray[3]};
+    font-weight: bolder;
   }
 
   ${props =>
@@ -45,9 +47,18 @@ const buttonStyle = css`
   ${props =>
   props.cyan &&
     css`
-      background: ${palette.cyan[5]};
+      background: ${palette.cyan[3]};
       &:hover {
-        background: ${palette.cyan[4]};
+        background: ${palette.cyan[1]};
+      }
+    `}
+
+  ${props =>
+  props.red &&
+    css`
+      background: ${palette.red[3]};
+      &:hover {
+        background: ${palette.red[2]};
       }
     `}
 

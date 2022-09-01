@@ -6,15 +6,13 @@ const SubInfoBlock = styled.div`
   ${props =>
   props.hasMarginTop &&
   css`
-    margin-top: 1rem;
+    margin-top: 2rem;
   `}
-  color: ${palette.gray[6]};
+  color: ${palette.gray[2]};
 
   /* span 사이에 가운뎃점 문자 보여 주기 */
   span + span:before {
-    color: ${palette.gray[4]};
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
+    padding: 0 0.5rem;
     content: '\\B7'; /* 가운데점 문자 */
   }
 `;
