@@ -8,47 +8,54 @@ const TagBoxBlock = styled.div`
   padding-top: 2rem;
 
   h4 {
-    color: ${palette.gray[8]};
-    margin-top: 0;
-    margin-bottom: 0.5rem;
+    color: ${palette.gray[2]};
+    margin: 0 0 0.5rem 0.5rem;
   }
 `;
 
 const TagForm = styled.form`
-  border-radius: 4px;
+  border-radius: 20px;
   overflow: hidden;
   display: flex;
   width: 256px;
-  border: 1px solid ${palette.gray[9]}; /* 스타일 초기화 */
+  /* border: 1px solid ${palette.gray[4]}; */
+   /* 스타일 초기화 */
+  
   input,
   button {
     outline: none;
     border: none;
     font-size: 1rem;
+    
   }
 
   input {
     padding: 0.5rem;
     flex: 1;
     min-width: 0;
+    background: ${palette.gray[9]};
   }
   button {
     cursor: pointer;
     padding-right: 1rem;
     padding-left: 1rem;
     border: none;
-    background: ${palette.gray[8]};
+    background: ${palette.cyan[3]};
     color: white;
     font-weight: bold;
     &:hover {
-      background: ${palette.gray[6]};
+      background: ${palette.cyan[2]};
     }
   }
 `;
 
 const Tag = styled.div`
+  font-size: 0.75rem;
+  border-radius: 20px;
+  padding: 0.3rem 0.6rem;
   margin-right: 0.5rem;
-  color: ${palette.gray[6]};
+  background: ${palette.cyan[4]};
+  color: ${palette.gray[9]};
   cursor: pointer;
   &:hover {
     opacity: 0.5;
@@ -118,7 +125,7 @@ const TagBox = ({ tags, onChangeTags }) => {
 
   return (
     <TagBoxBlock>
-      <h4>태그</h4>
+      <h4># 태그를 추가하세요</h4>
       <TagForm onSubmit={onSubmit}>
         <input
           placeholder='태그를 입력하세요'

@@ -4,14 +4,13 @@ import palette from '../../lib/styles/palette';
 import AskRemoveModal from './AskRemoveModal';
 
 const PostActionButtonsBlock = styled.div`
-  /* background: red; */
   display: flex;
   justify-content: flex-end;
-  /* margin-bottom: 2rem; */
 `;
 
 const ActionButton = styled.button`
-  padding: 0.5rem 1.5rem;
+  margin: 0;
+  padding: 0.6rem 1.5rem;
   border-radius: 20px;
   background: ${palette.cyan[4]};
   color: ${palette.gray[9]};

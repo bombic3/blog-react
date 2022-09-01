@@ -3,6 +3,7 @@ import Button from './Button';
 import Responsive from './Responsive';
 import { Link } from 'react-router-dom';
 import palette from '../../lib/styles/palette';
+import LogoutButton from '../auth/LogoutButton';
 
 /*
 1. Button 컴포넌트에서 withRouter 사용
@@ -65,7 +66,7 @@ const Header = ({ user, onLogout }) => {
           {user ? (
             <div className='right'>
               <UserInfo><b>{user.username}</b> 님 환영합니다 :&#41;</UserInfo>
-              <Button cyan onClick={onLogout}>로그아웃</Button>
+              <LogoutButton />
             </div>
           ) : (
               <div className='right'>

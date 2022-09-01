@@ -13,7 +13,7 @@ const PostViewerBlock = styled(Responsive)`
 `;
 const PostHead = styled.div`
   color: ${palette.gray[0]};
-  border-bottom: 4px solid ${palette.gray[3]};
+  border-bottom: 3px solid ${palette.gray[3]};
   padding-bottom: 2rem;
   margin-bottom: 3rem;
   h1 {
@@ -29,7 +29,15 @@ const PostContent = styled.div`
   margin-bottom: 3rem;
 `;
 
+const ButtonBlock = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 자식 엘리먼트 사이의 여백을 최대로 설정 */
+`;
+
 const ListViewerBtn = styled(Button)`
+  padding: 0.5rem 1.5rem;
   font-size: 0.875;
 `
 
@@ -81,10 +89,12 @@ const PostViewer = ({ post, error, loading, actionButtons }) => {
       <PostContent
         dangerouslySetInnerHTML={{ __html: body }}
       />
-      <ListViewerBtn>
-        <Link to='/'>목록으로</Link>
-      </ListViewerBtn>
-      {actionButtons}
+      <ButtonBlock>
+        <ListViewerBtn>
+          <Link to='/'>목록으로</Link>
+        </ListViewerBtn>
+        {actionButtons}
+      </ButtonBlock>
     </PostViewerBlock>
   );
 };

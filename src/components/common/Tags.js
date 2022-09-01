@@ -4,14 +4,23 @@ import palette from '../../lib/styles/palette';
 
 const TagsBlock = styled.div`
   margin-top: 0.5rem;
-  .tag {
-    display: inline-block;
-    color: ${palette.cyan[3]};
-    text-decoration: none;
-    margin-right: 0.5rem;
-    &:hover {
-      color: ${palette.cyan[1]};
-    }
+  color: ${palette.gray[9]};
+`;
+
+const Tag = styled.div`
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.75rem;
+  display: inline-block;
+  border-radius: 20px;
+  padding: 0.3rem 0.75rem;
+  margin-right: 0.5rem;
+  background: ${palette.cyan[5]};
+  cursor: pointer;
+  transition: all 0.5s;
+
+  &:hover {
+    background: ${palette.cyan[2]};
   }
 `;
 
@@ -19,9 +28,11 @@ const Tags = ({ tags }) => {
   return (
     <TagsBlock>
       {tags.map(tag => (
-        <Link className='tag' to={`/?tag=${tag}`} key={tag}>
-          #{tag}
-        </Link>
+        <Tag>     
+          <Link to={`/?tag=${tag}`} key={tag}>
+            # {tag}
+          </Link>
+        </Tag>
       ))}
     </TagsBlock>
   );

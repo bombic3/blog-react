@@ -3,7 +3,6 @@ import Quill from 'quill';
 import 'quill/dist/quill.bubble.css'
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
-// import Responsive from '../common/Responsive';
 
 const EditorBlock = styled.div`
   /* 페이지 위아래 여백 지정 */
@@ -11,6 +10,7 @@ const EditorBlock = styled.div`
   padding-bottom: 5rem;
 `;
 const TitleInput = styled.input`
+  background: ${palette.gray[8]};
   font-size: 3rem;
   outline: none;
   padding-bottom: 0.5rem;
