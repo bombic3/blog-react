@@ -52,7 +52,7 @@ app.use(jwtMiddleware);
 // app 인스턴스에 라우터 적용
 app.use(router.routes()).use(router.allowedMethods());
 
-const buildDirectory = path.resolve(__dirname, '../../blog-frontend/build');
+const buildDirectory = path.resolve(__dirname, '../../build');
 app.use(serve(buildDirectory));
 app.use(async ctx => {
   // Not Found 이고, 주소가 /api 로 시작하지 않는 경우
