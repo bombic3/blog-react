@@ -1,7 +1,7 @@
 import React from 'react';
 import AskModal from '../common/AskModal';
 
-const AskLogoutModal = ({ visible, onCancel, onLogout }) => {
+const AskLogoutModal = ({ visible, onCancel, onConfirm }) => {
   return (
     <AskModal
       visible={visible}
@@ -9,7 +9,7 @@ const AskLogoutModal = ({ visible, onCancel, onLogout }) => {
       description='로그아웃 하시겠습니까?'
       confirmText='로그아웃'
       onCancel={onCancel}
-      onLogout={onLogout}
+      onConfirm={onConfirm}
     />
   );
 };

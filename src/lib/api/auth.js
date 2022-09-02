@@ -13,4 +13,5 @@ export const check = () => client.post('/api/auth/check');
 // export const check = () => client.get('/api/auth/check');
 
 // 로그아웃
-export const logout = () => client.post('/api/auth/logout');
+export const logout = () =>
+  client.post('/api/auth/logout');
