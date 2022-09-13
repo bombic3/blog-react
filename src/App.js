@@ -10,7 +10,7 @@ const App = () => {
   return (
     <>
       <Helmet>
-        <title>REACTERS</title>
+        <title>BLOG</title>
       </Helmet>
       <Routes>
         <Route path="/" element={<PostListPage />} />

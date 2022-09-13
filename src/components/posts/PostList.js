@@ -13,7 +13,7 @@ const PostListBlock = styled(Responsive)`
 const NewWriteBtn = styled(Button)`
   position: fixed;
   top: 6rem;
-  right: 2rem;
+  right: 3rem;
   &:hover {
     font-size: large;
     background: ${palette.cyan[1]};

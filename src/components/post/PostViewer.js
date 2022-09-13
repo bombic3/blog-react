@@ -75,7 +75,7 @@ const PostViewer = ({ post, error, loading, actionButtons }) => {
   return (
     <PostViewerBlock>
       <Helmet>
-        <title>{title} - REACTERS</title>
+        <title>{title}</title>
       </Helmet>
       <PostHead>
         <h1>{title}</h1>
