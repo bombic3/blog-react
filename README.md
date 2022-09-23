@@ -38,6 +38,7 @@ React와 Node.js를 활용한 블로그 웹 사이트 애플리케이션
 ![프로젝트 구조](https://user-images.githubusercontent.com/87863264/190332460-b24470da-3005-4719-9110-867e374c4aff.png)
 
 ## ↔️Usecase
+![usecase](https://user-images.githubusercontent.com/87863264/191881772-461b125f-f315-47ec-a10f-a72ccec45ade.png)
 
 ## 📌 주요 기능
 #### 회원가입
